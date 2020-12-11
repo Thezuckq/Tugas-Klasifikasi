@@ -6,6 +6,8 @@ import seaborn as sb
 from sklearn import preprocessing as pre
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.cluster import KMeans
+
 
 col_list = ['urlDrugName', 'rating', 'effectiveness', 'sideEffects', 'condition']
 drugReview = pd.read_csv('drugReview.csv', usecols = col_list)
@@ -15,9 +17,9 @@ print(drugReview.head())
 
 print(drugReview.info()) #Menampilkan Berbagai Informasi dataset
 
-print("Drug Review data set dimensions : {}".format(drugReview.shape))
+print("\nDrug Review data set dimensions : {}".format(drugReview.shape, '\n'))
 
-# print(drugReview.isna().sum()) #Melihat jumlah Missing Value
+print("Missing values: \n", drugReview.isna().sum()) #Melihat jumlah Missing Value
 
 drugReview = drugReview.dropna(axis=0)
 
@@ -81,7 +83,6 @@ plt.show()
 # plt.show()
 
 # Using the elbow method to find the optimal number of clusters
-from sklearn.cluster import KMeans
 wcss = []
 for i in range(1, 11):
     kmeans = KMeans(n_clusters = i, init = 'k-means++', random_state = 42)
