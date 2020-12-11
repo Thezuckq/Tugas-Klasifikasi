@@ -14,9 +14,9 @@ print(drugReview.head())
 
 print(drugReview.info()) #Menampilkan Berbagai Informasi dataset
 
-print("Drug Review data set dimensions : {}".format(drugReview.shape))
+print("\nDrug Review data set dimensions : {}".format(drugReview.shape, '\n'))
 
-# print(drugReview.isna().sum()) #Melihat jumlah Missing Value
+print("Missing values: \n", drugReview.isna().sum()) #Melihat jumlah Missing Value
 
 drugReview = drugReview.dropna(axis=0)
 
@@ -39,4 +39,5 @@ print(df.head(20))
 
 # sb.scatterplot(x="urlDrugName",y="rating",data=drugReview,s=100,color="blue",alpha=0.5)
 # plt.show()
+
 
