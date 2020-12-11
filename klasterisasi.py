@@ -17,7 +17,7 @@ print(drugReview.head())
 
 print(drugReview.info()) #Menampilkan Berbagai Informasi dataset
 
-print("\nDrug Review data set dimensions : {}".format(drugReview.shape, '\n'))
+print('\nDrug Review data set dimensions : {}'.format(drugReview.shape, '\n'))
 
 print("Missing values: \n", drugReview.isna().sum()) #Melihat jumlah Missing Value
 
